@@ -5,7 +5,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Test Build OpenWrt X64 with vfio and qemu
+name:  Build OpenWrt X64 
 
 on: 
   release:
@@ -17,8 +17,8 @@ on:
       - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
-#  watch:
-#   types: [started]
+  watch:
+   types: [started]
 
 jobs:
   build:
