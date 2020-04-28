@@ -62,9 +62,6 @@ jobs:
         REPO_BRANCH: master
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
-    - name: Check out
-      run: cd openwrt && git checkout 8a02b490780a56991fec382a8dfa8943b49d9b71
-
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
