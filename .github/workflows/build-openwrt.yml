@@ -17,8 +17,8 @@ on:
       - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
-#  watch:
-#  types: [started]
+  watch:
+  types: [started]
 
 jobs:
   build:
@@ -61,6 +61,9 @@ jobs:
         REPO_URL: https://github.com/coolsnowwolf/lede
         REPO_BRANCH: master
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+
+    - name:check out
+      run: cd openwrt && git checkout 8a02b490780a56991fec382a8dfa8943b49d9b71
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
